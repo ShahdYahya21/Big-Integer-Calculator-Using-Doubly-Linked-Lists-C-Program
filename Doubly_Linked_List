@@ -1,0 +1,140 @@
+struct Division{
+struct Node* quotient;
+struct Node* remainder;
+
+};
+
+struct Node {
+    int num;
+    char sign;
+    struct Node* prev;
+    struct Node* next;
+};
+
+
+void DeleteList(struct Node* head);
+struct Node* Find(int X, struct Node* head);
+
+
+struct Node* MakeEmpty(struct Node* head) {
+   head = (struct Node*) malloc(sizeof(struct Node));
+    if (head == NULL) {
+        printf("out of memory");
+        return NULL;
+    }
+    head->prev = NULL;
+    head->next = NULL;
+
+    return head;
+}
+
+int IsEmpty(struct Node* head) {
+    return head->next == NULL && head->prev == NULL;
+}
+
+int IsLast(struct Node* P) {
+    return P->next == NULL;
+}
+
+struct Node* Find(int X, struct Node* head) {
+    struct Node* P = head->next;
+    while (P != NULL && P->num != X) {
+        P = P->next;
+    }
+    return P;
+}
+
+void Delete(int X, struct Node* head) {
+    struct Node* P = Find(X, head);
+    if (P != NULL) {
+        if (P->prev != NULL) {
+            P->prev->next = P->next;
+        } else {
+            head->next = P->next;
+        }
+        if (P->next != NULL) {
+            P->next->prev = P->prev;
+        }
+        free(P);
+    }
+}
+
+void Insert(int X, struct Node* head, struct Node* P) {
+    struct Node* temp;
+    temp = (struct Node*) malloc(sizeof(struct Node));
+    temp->num = X;
+    temp->prev = P;
+    temp->next = P->next;
+    if (P->next != NULL) {
+        P->next->prev = temp;
+    }
+    P->next = temp;
+}
+
+void PrintList(struct Node* head) {
+    if (IsEmpty(head)) {
+        printf("the linked list is empty");
+    } else {
+        struct Node* P = head -> next;
+     if(P != NULL && P -> sign == '-'){
+       printf("%c", P->sign);
+        P = P -> next;
+         }
+
+        while (P != NULL) {
+            printf("%d", P->num);
+            P = P->next;
+        }
+         printf("\n");
+
+    }
+}
+
+void DeleteList(struct Node* head) {
+    struct Node* P;
+    struct Node* temp;
+    P = head->next;
+    head->next = NULL;
+    head->prev = NULL;
+    while (P != NULL) {
+        temp = P->next;
+        free(P);
+        P = temp;
+    }
+}
+void InsertChar(char c, struct Node* head, struct Node* P) {
+    struct Node* temp;
+    temp = (struct Node*) malloc(sizeof(struct Node));
+    temp->sign = c;
+    temp->prev = P;
+    temp->next = P->next;
+    if (P->next != NULL) {
+        P->next->prev = temp;
+    }
+    P->next = temp;
+}
+struct Node* FindLast(struct Node* temp,struct Node* l) {
+    temp = l;
+    while (temp -> next) {
+        temp = temp->next;
+    }
+    return temp;
+
+
+}
+void InsertAtLast(int X, struct Node* head) {
+    struct Node* temp;
+    temp = (struct Node*) malloc(sizeof(struct Node));
+    temp->num = X;
+    struct Node* temp1 = FindLast(temp1,head);
+
+    temp1->next = temp;
+    temp -> prev = temp1;
+    temp -> next = NULL;
+
+}
+
+
+
+
+
