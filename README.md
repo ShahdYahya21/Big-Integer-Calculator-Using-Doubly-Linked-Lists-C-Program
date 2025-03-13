@@ -13,15 +13,15 @@ This C program implements a big integer calculator that can perform basic arithm
 - **DeleteList()** – Frees all allocated memory.
 - **Insert()** – Inserts a digit at a specified position.
 - **InsertChar()** – Inserts a character (for sign handling).
-
+  
 ## Arithmetic Operations
+The program supports the following arithmetic operations:
 
-These operations are implemented using the following functions:
+- **`Sum(struct Node* l1, struct Node* l2)`**: Adds two numbers and returns the result as a linked list.
+- **`Sub(struct Node* l1, struct Node* l2, int digitDifference)`**: Subtracts `l2` from `l1` while considering digit differences.
+- **`Mul(struct Node* l1, struct Node* l2)`**: Multiplies two numbers and returns the result.
+- **`Divide(struct Node* dividend, struct Node* divisor, int numOfDividendDigit, int numOfDivisorDigit)`**: Divides `dividend` by `divisor` and returns both quotient and remainder.
 
-- **Sum(struct Node* l1, struct Node* l2): Adds two numbers.
-- **Sub(struct Node* l1, struct Node* l2, int digitDifference): Subtracts two numbers.
-- **Mul(struct Node* l1, struct Node* l2): Multiplies two numbers.
-- **Divide(struct Node* dividend, struct Node* divisor, int numOfDividendDigit, int numOfDivisorDigit): Divides two numbers and returns quotient and remainder.
 
 ## Features
 - Handles **arbitrarily large integers**  
