@@ -1,8 +1,9 @@
-# Big Integer Calculator Using Doubly Linked Lists (C Program)
+## Big Integer Calculator Using Doubly Linked Lists (C Program)
 
-This C program implements a big integer calculator that can perform basic arithmetic operations (addition, subtraction, multiplication, and division) on large numbers using doubly linked lists.
+- This C program implements a big integer calculator that can perform basic arithmetic operations (addition, subtraction, multiplication, and division) on large numbers using doubly linked lists.
+---
 
-## Core Linked List Operations
+### Core Linked List Operations
 
 - **MakeEmpty()** – Initializes an empty doubly linked list.
 - **InsertAtLast()** – Adds a digit at the end of the linked list.
@@ -13,8 +14,8 @@ This C program implements a big integer calculator that can perform basic arithm
 - **DeleteList()** – Frees all allocated memory.
 - **Insert()** – Inserts a digit at a specified position.
 - **InsertChar()** – Inserts a character (for sign handling).
-  
-## Arithmetic Operations
+---  
+### Arithmetic Operations
 The program supports the following arithmetic operations:
 
 - **`Sum(struct Node* l1, struct Node* l2)`**: Adds two numbers and returns the result as a linked list.
@@ -22,16 +23,16 @@ The program supports the following arithmetic operations:
 - **`Mul(struct Node* l1, struct Node* l2)`**: Multiplies two numbers and returns the result.
 - **`Divide(struct Node* dividend, struct Node* divisor, int numOfDividendDigit, int numOfDivisorDigit)`**: Divides `dividend` by `divisor` and returns both quotient and remainder.
 
-
-## Features
+---
+### Features
 - Handles **arbitrarily large integers**  
 - Uses **doubly linked lists** for efficient number representation  
 - Supports **negative numbers**  
 - Reads numbers from **input.txt**  
 - Performs **addition, subtraction, multiplication, and division**
 
-
-## Program Output Example
+---
+### Program Output Example
 When running the calculator, the user is presented with the following menu:
 
 Welcome to my calculator  
